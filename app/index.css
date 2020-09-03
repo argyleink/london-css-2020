@@ -1,1 +1,14 @@
 @import 'slyd';
+
+p > a {
+  display: inline;
+}
+
+[flipped] {
+  display: inline-block;
+  transform: rotateY(.5turn);
+}
+
+code[class*="language-"], pre[class*="language-"] {
+  text-align: left;
+}

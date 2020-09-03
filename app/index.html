@@ -15,32 +15,207 @@
     
     <slyds>
 
-      <slyd>
-        <h1 uppercase>Slide 1</h1>
-        <h2>it's <span highlight>working</span> grrreat!</h2>
-      </slyd>
-
       <slyd-group>
 
         <slyd>
-          <h1>Slide 2a</h1>
-          <h2>subtitle</h2>
+          <h1 uppercase>London <b>CSS</b></h1>
+          <h2><span highlight>what's new</span> in 2020</h2>
         </slyd>
 
-        <slyd>
-          <h1>Slide 2b</h1>
+        <slyd id="topics">
+          <h2 serif>Specs <em color="brand-1">&</em> Tools</h2>
         </slyd>
-        
-        <slyd>
-          <h1>Slide 2c</h1>
+
+      </slyd-group>
+
+      <!-- <slyd id="specs">
+        <h1 uppercase>Specs</h1>
+        <h2><b color="brand-2">|</b> <span color="brand-1">News</span> <b color="brand-2">|</b> <span color="brand-1">Drafts</span> <b color="brand-2">|</b> <span color="brand-1">Proposals</span> <b color="brand-2">|</b></h2>
+      </slyd> -->
+
+      <slyd-group>
+
+        <slyd id="spec-news">
+          <h1 uppercase>Spec News</h1>
+        </slyd>
+
+        <slyd id="color-contrast">
+          <h2>Contrast 3.0</h2>
+          <p>No more AA or AAA</p>
+        </slyd>
+
+        <slyd id="hd-color">
+          <h2>HD Color</h2>
+          <pre class="language-css line-numbers show-language"><code>
+            @media (dynamic-range: high) {
+              .neon-pink {
+                --neon-glow: color(display-p3 1 0 1);
+              }
+
+              .neon-purple {
+                --neon-glow: color(display-p3 0 0 1);
+              }
+
+              .neon-blue {
+                --neon-glow: color(display-p3 0 1 1);
+              }
+            }
+          </code></pre>
+        </slyd>
+
+        <slyd id="marker">
+          <h2>::marker</h2>
+          <pre class="language-css line-numbers show-language"><code>
+            li::marker {
+              color: var(--neon-pink);
+            }
+
+            li:first-child::marker {
+              font-size: 1ex;
+            }
+          </code></pre>
+        </slyd>
+
+        <slyd id="focus-visible">
+          <h2>:focus-visible</h2>
+          <pre class="language-css line-numbers show-language"><code>
+            button:focus:not(:focus-visible) {
+              box-shadow: 0 10px 25px -10px hsl(0 0% 0% / 25%);
+            }
+          </code></pre>
+        </slyd>
+
+        <slyd id="additive-animation">
+          <h2>Additive animation</h2>
         </slyd>
         
       </slyd-group>
 
-      <slyd>
-        <h1 uppercase>Slide 3</h1>
-        <h2>you're ready to go</h2>
-      </slyd>
+      <slyd-group>
+
+        <slyd id="spec-drafts">
+          <h1 uppercase>Rad Drafts</h1>
+        </slyd>
+
+        <slyd id="spelling-and-grammar">
+          <h2 color="brand-2">::spelling-errer</h2>
+          <em>&</em>
+          <h2 color="brand-3">::grammar-error</h2>
+        </slyd>
+
+        <slyd id="cue">
+          <h2>::cue</h2>
+        </slyd>
+
+        <slyd id="target-within">
+          <h2>:target-within</h2>
+        </slyd>
+
+        <slyd id="nesting">
+          <h2>& > and @nest</h2>
+        </slyd>
+
+        <slyd id="logical-properties">
+          <h2>Logical Props</h2>
+        </slyd>
+
+        <slyd id="color">
+          <h2>Color level 4 and 5</h2>
+        </slyd>
+
+        <slyd id="units">
+          <h2>🆕 Relative & Absolute Units</h2>
+        </slyd>
+
+      </slyd-group>
+
+      <slyd-group>
+
+        <slyd id="spec-proposals">
+          <h1 uppercase>Rad Proposals</h1>
+        </slyd>
+
+        <slyd id="motion-blur">
+          <h2>Motion Blur</h2>
+        </slyd>
+
+        <slyd id="scroll-timeline">
+          <h2>Scroll Timeline</h2>
+        </slyd>
+
+        <slyd id="leading-trim">
+          <h2>Leading Trim</h2>
+        </slyd>
+
+        <slyd id="layers">
+          <h2>Cascade Layers @layer</h2>
+        </slyd>
+
+      </slyd-group>
+
+      <slyd-group>
+
+        <slyd id="tools">
+          <h1 uppercase>Tools</h1>
+        </slyd>
+
+        <slyd id="firefox-tools">
+          <h2>Firefox Devtools Rule</h2>
+        </slyd>
+
+        <slyd id="focus-tools">
+          <h2>Devtools :focus-visible</h2>
+        </slyd>
+
+        <slyd id="grid-tools">
+          <h2>Devtools For Grid</h2>
+        </slyd>
+
+        <slyd id="color-tools">
+          <h2>Safari color() picker</h2>
+        </slyd>
+
+        <slyd id="layer-tools">
+          <h2>Safari layers view</h2>
+        </slyd>
+
+        <slyd id="overview-tools">
+          <h2>CSS Overview</h2>
+        </slyd>
+
+        <slyd id="emulation-tools">
+          <h2>Emulating Preferences & Contexts</h2>
+        </slyd>
+
+        <slyd id="font-tools">
+          <h2>Font Editor</h2>
+        </slyd>
+
+        <slyd id="type-tools">
+          <h2>CSS &#60;type&#62; Components</h2>
+        </slyd>
+
+        <slyd id="designer-tools">
+          <h2>VisBug Artboard</h2>
+        </slyd>
+        
+      </slyd-group>
+
+      <slyd-group>
+
+        <slyd id="css-is-moving-fast">
+          <h2><b>CSS</b> is</h2>
+          <h1 color="brand-3">CRUISIN</h1>
+        </slyd>
+
+        <slyd id="follow-for-more">
+          <h1><span flipped>🎉</span> <b>CSS</b> 🎉</h1>
+          <p lead>
+            Hear this hot 👉 <a href="https://twitter.com/argyleink">@argyleink</a>
+          </p>
+        </slyd>
+
+      </slyd-group>
 
     </slyds>
 
