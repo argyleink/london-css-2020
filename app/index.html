@@ -9,6 +9,9 @@
     <meta name="theme-color" content="#111111">
     <meta name="description" content="">
 
+    <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/line-numbers/prism-line-numbers.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="//unpkg.com/prism-themes@1.1.0/themes/prism-atom-dark.css" as="style" onload="this.rel='stylesheet'">
+
     <link rel="stylesheet" href="bundle.css">
   </head>
   <body>
@@ -18,75 +21,110 @@
       <slyd-group>
 
         <slyd>
-          <h1 uppercase>London <b>CSS</b></h1>
-          <h2><span highlight>what's new</span> in 2020</h2>
+          <h1 uppercase>London <b class="neon-purple">CSS</b></h1>
+          <h2><span highlight>what's new</span> in <b class="neon-pink">2020</b></h2>
+        </slyd>
+
+        <slyd id="rapid-fire">
+          <h2>Rapid Fire</h2>
+          <p lead><b>From</b> stable and maybe in your browser,<br> <b>to</b> risky and maybe never in your browser</p>
         </slyd>
 
         <slyd id="topics">
-          <h2 serif>Specs <em color="brand-1">&</em> Tools</h2>
+          <h2 serif>Specs.then(Tools)</h2>
+          <h3 color="brand-1"><code>slides = [...Specs, ...Tools]</code></h3>
         </slyd>
 
       </slyd-group>
 
-      <!-- <slyd id="specs">
-        <h1 uppercase>Specs</h1>
-        <h2><b color="brand-2">|</b> <span color="brand-1">News</span> <b color="brand-2">|</b> <span color="brand-1">Drafts</span> <b color="brand-2">|</b> <span color="brand-1">Proposals</span> <b color="brand-2">|</b></h2>
-      </slyd> -->
-
       <slyd-group>
 
         <slyd id="spec-news">
-          <h1 uppercase>Spec News</h1>
+          <h1 uppercase><b class="neon-red">Rad</b> Specs</h1>
         </slyd>
 
         <slyd id="color-contrast">
           <h2>Contrast 3.0</h2>
-          <p>No more AA or AAA</p>
+          <ul>
+            <li>AA & AAA merge into one guideline</li>
+            <li>Function updates include modern perceptual color research</li>
+            <li>Font families, weights, etc are vectors in the score</li>
+          </ul>
+          <a class="neon-green" href="https://w3c.github.io/silver/guidelines/#visual-contrast-of-text">learn more</a>
         </slyd>
 
         <slyd id="hd-color">
-          <h2>HD Color</h2>
-          <pre class="language-css line-numbers show-language"><code>
+          <h2><b>HD</b> Color</h2>
+          <pre class="language-css"><code>
             @media (dynamic-range: high) {
               .neon-pink {
                 --neon-glow: color(display-p3 1 0 1);
               }
-
-              .neon-purple {
-                --neon-glow: color(display-p3 0 0 1);
-              }
-
-              .neon-blue {
-                --neon-glow: color(display-p3 0 1 1);
-              }
             }
           </code></pre>
+          <small>
+            <a class="neon-green" href="https://codepen.io/argyleink/pen/XWdapvY">Beat Saber</a> | 
+            <a class="neon-pink" href="https://codepen.io/argyleink/pen/MWymQGj">Best <code>display-p3</code> Neon Colors</a>
+          </small>
         </slyd>
 
         <slyd id="marker">
-          <h2>::marker</h2>
-          <pre class="language-css line-numbers show-language"><code>
+          <h2><code>::marker</code></h2>
+          <pre class="language-css"><code>
             li::marker {
               color: var(--neon-pink);
             }
-
-            li:first-child::marker {
-              font-size: 1ex;
-            }
           </code></pre>
+          <small>
+            <a class="neon-green" href="https://web.dev/css-marker-pseudo-element/">learn more</a>
+          </small>
         </slyd>
 
         <slyd id="focus-visible">
-          <h2>:focus-visible</h2>
-          <pre class="language-css line-numbers show-language"><code>
+          <h2><code>:focus-visible</code></h2>
+          <pre class="language-css"><code>
             button:focus:not(:focus-visible) {
               box-shadow: 0 10px 25px -10px hsl(0 0% 0% / 25%);
             }
           </code></pre>
+          <p lead>Browser provided hook into focus heuristics</p>
+          <a class="neon-green" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible">learn more</a>
+        </slyd>
+
+        <slyd id="logical-properties">
+          <h2>Logical Props</h2>
+          <pre class="language-css"><code>
+            p {
+              max-inline-size: 40ch;
+              margin-block: 1ch;
+              padding-inline: 1ch;
+              text-align: end;
+            }
+          </code></pre>
+          <a class="neon-green" href="https://blogs.igalia.com/mrego/2018/08/08/css-logical-properties-and-values-in-chromium/">learn more</a>
         </slyd>
 
         <slyd id="additive-animation">
-          <h2>Additive animation</h2>
+          <h2>Web Animations</h2>
+          <pre class="language-js"><code>
+            element.animate(
+              [{transform: `translate(${x}px, ${y}px)`}],
+              {composite: 'add'},
+            })
+          </code></pre>
+          <a class="neon-green" href="https://web.dev/web-animations/">learn more</a>
+        </slyd>
+
+        <slyd id="reduced-data">
+          <h2>Data Saver</h2>
+          <pre class="language-css"><code>
+            @media (prefers-reduced-data: reduce) {
+              header {
+                background-image: url(/grunge.avif);
+              }
+            }
+          </code></pre>
+          <a class="neon-green" href="https://web.dev/web-animations/">learn more</a>
         </slyd>
         
       </slyd-group>
@@ -94,61 +132,152 @@
       <slyd-group>
 
         <slyd id="spec-drafts">
-          <h1 uppercase>Rad Drafts</h1>
+          <h1 uppercase><b class="neon-blue">Rad</b> Drafts</h1>
         </slyd>
 
         <slyd id="spelling-and-grammar">
-          <h2 color="brand-2">::spelling-errer</h2>
-          <em>&</em>
-          <h2 color="brand-3">::grammar-error</h2>
+          <h2>Spellin <span bold color="brand-3">&</span> Grammar</h2>
+          <pre class="language-css"><code>
+            ::spelling-error {
+              text-decoration: wavy var(--neon-red);
+            }
+
+            ::grammar-error {
+              text-decoration: wavy var(--neon-red);
+            }
+          </code></pre>
+          <p>Will allow a <a class="neon-green wavy" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::grammar-error">limited</a> set of allowable styles</p>
         </slyd>
 
         <slyd id="cue">
-          <h2>::cue</h2>
+          <h2><code>::cue()</code></h2>
+          <pre class="language-css"><code>
+            ::cue {
+              color: white;
+              background-color: hsl(0 0% 0% / 90%);
+            }
+          </code></pre>
+          <p>Will allow a <a class="neon-green wavy" href="https://w3c.github.io/webvtt/#the-cue-pseudo-element">limited</a> set of allowable styles</p>
         </slyd>
 
         <slyd id="target-within">
-          <h2>:target-within</h2>
+          <h2><code>:target-within</code></h2>
+          <pre class="language-css"><code>
+            article:target-within {
+              background-color: hsl(var(--surfaceHSL) / 10%);
+            }
+          </code></pre>
+          <a class="neon-green" href="https://www.w3.org/TR/selectors-4/#the-target-within-pseudo">learn more</a>
         </slyd>
 
         <slyd id="nesting">
-          <h2>& > and @nest</h2>
-        </slyd>
-
-        <slyd id="logical-properties">
-          <h2>Logical Props</h2>
-        </slyd>
-
-        <slyd id="color">
-          <h2>Color level 4 and 5</h2>
+          <h2><code>& ></code> and <code>@nest</code></h2>
+          <pre class="language-css"><code>
+            article {
+              & > p { ... }
+              @nest section > & { ... }
+            }
+          </code></pre>
+          <a class="neon-pink" href="https://drafts.csswg.org/css-nesting-1/#nest-selector">learn more</a>
         </slyd>
 
         <slyd id="units">
-          <h2>🆕 Relative & Absolute Units</h2>
+          <h2>🆕 Relative Units</h2>
+          <pre class="language-css"><code>
+            p {
+              margin: 1cap 1lh 1rlh;
+              padding: 1vi 1vb;
+            }
+          </code></pre>
+          <small>
+            <a class="neon-green" href="https://drafts.csswg.org/css-values-4/#relative-lengths">learn more</a> | <a href="https://codepen.io/argyleink/pen/OJNMywP">demo</a>
+          </small>
+        </slyd>
+
+        <slyd id="color-4">
+          <h2>Color <b>Level 4</b></h2>
+          <pre class="language-css"><code>
+            .colour {
+              --fn-notation: hsl(2rad 50% 50% / 80%);
+              --neon-pink: color(display-p3 1 0 1);
+              --gray: lch(50% 0 0);
+              --fallback: color(lab 25 25 25, display-p3 1 0 1, #ccc);
+            }
+          </code></pre>
+          <a class="neon-green" href="https://drafts.csswg.org/css-color/">learn more</a>
+        </slyd>
+
+        <slyd id="color-5">
+          <h2>Color <b>Level 5</b></h2>
+          <pre class="language-css"><code>
+            .colour {
+              --pink: color-mix(red, white);
+              --halfpink: color(var(--pink) / 50%);
+              --halfred: rgb(from #f00 / 50%);
+              --darkred: hsl(from red h s calc(l * .25));
+            }
+          </code></pre>
+          <a class="neon-green" href="https://drafts.csswg.org/css-color-5/">learn more</a>
         </slyd>
 
       </slyd-group>
 
       <slyd-group>
 
-        <slyd id="spec-proposals">
-          <h1 uppercase>Rad Proposals</h1>
+        <slyd id="rad-proposals">
+          <h1 uppercase><b class="neon-pink">Rad</b> Proposals</h1>
         </slyd>
 
         <slyd id="motion-blur">
           <h2>Motion Blur</h2>
+          <pre class="language-css"><code>
+            .animated {
+              motion-rendering: blur; 
+              motion-shutter-angle: 180deg;
+            }
+          </code></pre>
+          <a class="neon-green" href="https://github.com/w3c/csswg-drafts/issues/3837">learn more</a>
         </slyd>
 
         <slyd id="scroll-timeline">
-          <h2>Scroll Timeline</h2>
+          <h2><code>@scroll-timeline</code></h2>
+          <pre class="language-css"><code>
+            @scroll-timeline feature-timeline {
+              source: selector(#feature-carousel);
+            }
+
+            #feature-scrollspy {
+              animation-timeline: feature-timeline;
+            }
+          </code></pre>
+          <small>
+            <a class="neon-green" href="https://drafts.csswg.org/scroll-animations-1/">learn more</a> | <a class="neon-pink" href="https://codepen.io/argyleink/pen/XWdNYaY">demo</a> | <a class="neon-blue" href="https://github.com/flackr/scroll-timeline">polyfill</a>
+          </small>
         </slyd>
 
         <slyd id="leading-trim">
           <h2>Leading Trim</h2>
+          <pre class="language-css"><code>
+            p {
+              leading-trim: both;
+            }
+          </code></pre>
+          <small>
+            <a class="neon-green" href="https://medium.com/microsoft-design/leading-trim-the-future-of-digital-typesetting-d082d84b202">learn more</a> | <a class="neon-pink" href="https://drafts.csswg.org/css-inline-3/">draft</a>
+          </small>
         </slyd>
 
         <slyd id="layers">
-          <h2>Cascade Layers @layer</h2>
+          <h2>Cascade Layers</h2>
+          <pre class="language-css"><code>
+            @layer reset {
+              * { box-sizing: border-box; }
+              body { margin: 0; }
+            }
+            ...
+            @layer reset { /* add more later */ }
+          </code></pre>
+          <a class="neon-green" href="">learn more</a>
         </slyd>
 
       </slyd-group>
@@ -156,11 +285,16 @@
       <slyd-group>
 
         <slyd id="tools">
-          <h1 uppercase>Tools</h1>
+          <h1 uppercase><b class="neon-white">Rad</b> Tools</h1>
         </slyd>
 
         <slyd id="firefox-tools">
-          <h2>Firefox Devtools Rule</h2>
+          <h2>Firefox Devtools</h2>
+          <ol>
+            <li>Flexbox tools</li>
+            <li>OG Grid tools</li>
+            <li>.. plenty more</li>
+          </ol>
         </slyd>
 
         <slyd id="focus-tools">
@@ -204,14 +338,14 @@
       <slyd-group>
 
         <slyd id="css-is-moving-fast">
-          <h2><b>CSS</b> is</h2>
-          <h1 color="brand-3">CRUISIN</h1>
+          <h2><b class="neon-blue">CSS</b> is</h2>
+          <h1><b class="neon-purple">CRUISIN</b></h1>
         </slyd>
 
         <slyd id="follow-for-more">
           <h1><span flipped>🎉</span> <b>CSS</b> 🎉</h1>
           <p lead>
-            Hear this hot 👉 <a href="https://twitter.com/argyleink">@argyleink</a>
+            Hear this hot 👉 <a class="neon-green" href="https://twitter.com/argyleink">@argyleink</a>
           </p>
         </slyd>
 

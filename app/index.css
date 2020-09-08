@@ -1,7 +1,23 @@
 @import 'slyd';
+@import 'colors.css';
 
 p > a {
   display: inline;
+}
+
+a, b {
+  color: var(--neon, var(--brand-color-2), hotpink);
+  text-shadow: 0 0 .5em var(--neon-glow);
+}
+
+small > a {
+  font-size: max(60%, 3vmin);
+}
+
+small {
+  display: inline-flex;
+  align-items: center;
+  gap: 1ch;
 }
 
 [flipped] {
@@ -11,4 +27,14 @@ p > a {
 
 code[class*="language-"], pre[class*="language-"] {
   text-align: left;
+  font-size: max(48px, 4vmin);
+}
+
+.token.atrule, 
+.token.attr-value {
+  color: hsl(120 61% 70%);
+}
+
+.wavy {
+  text-decoration-style: wavy;
 }

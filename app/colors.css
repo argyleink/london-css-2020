@@ -1,0 +1,64 @@
+.neon-red {
+  --neon: #FF5161;
+  --neon-glow: #D30302;
+}
+
+.neon-pink {
+  --neon: #FF53cd;
+  --neon-glow: #e10361;
+}
+
+.neon-purple {
+  --neon: #9461fd;
+  --neon-glow: #4003e6;
+}
+
+.neon-blue {
+  --neon: #2dd9fe;
+  --neon-glow: #00a3d5;
+}
+
+.neon-green {
+  --neon: #00fe9b;
+  --neon-glow: #02c435;
+}
+
+.neon-yellow {
+  --neon: #ffdb4e;
+  --neon-glow: #b48505;
+}
+
+.neon-white {
+  --neon: #fefefe;
+  --neon-glow: #ffffff;
+}
+
+@media (dynamic-range: high) {
+  .neon-red {
+    --neon-glow: color(display-p3 1 0 0);
+  }
+
+  .neon-pink {
+    --neon-glow: color(display-p3 1 0 1);
+  }
+
+  .neon-purple {
+    --neon-glow: color(display-p3 0 0 1);
+  }
+
+  .neon-blue {
+    --neon-glow: color(display-p3 0 1 1);
+  }
+
+  .neon-green {
+    --neon-glow: color(display-p3 0 1 0);
+  }
+
+  .neon-yellow {
+    --neon-glow: color(display-p3 1 1 0);
+  }
+
+  .neon-white {
+    --neon-glow: color(display-p3 1 1 1);
+  }
+}
