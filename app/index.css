@@ -47,7 +47,7 @@ code[class*="language-"], pre[class*="language-"] {
   display: inline-flex;
   background: white;
   border-radius: 999px;
-  padding: 10px;
+  padding: .2em;
   box-sizing: content-box;
 
   & > img {
