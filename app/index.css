@@ -62,3 +62,11 @@ li {
 [spelling-error] {
   text-decoration: wavy underline var(--neon-red);
 }
+
+.qr {
+  padding: 2.5vmin;
+  background: white;
+  border-radius: 5vmin;
+  display: inline-flex;
+  margin: 0;
+}
