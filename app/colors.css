@@ -1,3 +1,13 @@
+:root {
+  --neon-red: #D30302;
+  --neon-pink: #e10361;
+  --neon-purple: #4003e6;
+  --neon-blue: #00a3d5;
+  --neon-green: #02c435;
+  --neon-yellow: #b48505;
+  --neon-white: #fff;
+}
+
 .neon-red {
   --neon: #FF5161;
   --neon-glow: #D30302;
@@ -34,6 +44,16 @@
 }
 
 @media (dynamic-range: high) {
+  :root {
+    --neon-red: color(display-p3 1 0 0);
+    --neon-pink: color(display-p3 1 0 1);
+    --neon-purple: color(display-p3 0 0 1);
+    --neon-blue: color(display-p3 0 1 1);
+    --neon-green: color(display-p3 0 1 0);
+    --neon-yellow: color(display-p3 1 1 0);
+    --neon-white: color(display-p3 1 1 1);
+  }
+
   .neon-red {
     --neon-glow: color(display-p3 1 0 0);
   }

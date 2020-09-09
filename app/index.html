@@ -25,14 +25,170 @@
           <h2><span highlight>what's new</span> in <b class="neon-pink">2020</b></h2>
         </slyd>
 
-        <slyd id="rapid-fire">
-          <h2>Rapid Fire</h2>
-          <p lead><b>From</b> stable and maybe in your browser,<br> <b>to</b> risky and maybe never in your browser</p>
-        </slyd>
-
         <slyd id="topics">
           <h2 serif>Specs.then(Tools)</h2>
           <h3 color="brand-1"><code>slides = [...Specs, ...Tools]</code></h3>
+        </slyd>
+
+        <slyd id="rapid-fire">
+          <h2>Rapid Fire</h2>
+          <p lead>
+            <b>From</b> risky and maybe never in your browser
+            <br><b>to</b> stable and maybe across browsers
+          </p>
+        </slyd>
+
+      </slyd-group>
+
+      <slyd-group>
+
+        <slyd id="rad-proposals">
+          <h1 uppercase><b class="neon-pink">Rad</b> Proposals</h1>
+        </slyd>
+
+        <slyd id="motion-blur">
+          <h2>Motion Blur</h2>
+          <pre class="language-css"><code>
+            .animated {
+              motion-rendering: blur; 
+              motion-shutter-angle: 180deg;
+            }
+          </code></pre>
+          <a class="neon-green" href="https://github.com/w3c/csswg-drafts/issues/3837">learn more</a>
+        </slyd>
+
+        <slyd id="scroll-timeline">
+          <h2><code>@scroll-timeline</code></h2>
+          <pre class="language-css"><code>
+            @scroll-timeline feature-timeline {
+              source: selector(#feature-carousel);
+            }
+
+            #feature-scrollspy {
+              animation-timeline: feature-timeline;
+            }
+          </code></pre>
+          <small>
+            <a class="neon-green" href="https://drafts.csswg.org/scroll-animations-1/">learn more</a> | <a class="neon-pink" href="https://codepen.io/argyleink/pen/XWdNYaY">demo</a> | <a class="neon-blue" href="https://github.com/flackr/scroll-timeline">polyfill</a>
+          </small>
+        </slyd>
+
+        <slyd id="leading-trim">
+          <h2>Leading Trim</h2>
+          <pre class="language-css"><code>
+            p {
+              leading-trim: both;
+            }
+          </code></pre>
+          <small>
+            <a class="neon-green" href="https://medium.com/microsoft-design/leading-trim-the-future-of-digital-typesetting-d082d84b202">learn more</a> | <a class="neon-pink" href="https://drafts.csswg.org/css-inline-3/">draft</a>
+          </small>
+        </slyd>
+
+        <slyd id="layers">
+          <h2>Cascade Layers</h2>
+          <pre class="language-css"><code>
+            @layer reset {
+              * { box-sizing: border-box; }
+              body { margin: 0; }
+            }
+            ...
+            @layer reset { /* add more later */ }
+          </code></pre>
+          <a class="neon-green" href="https://gist.github.com/mirisuzanne/4224caca74a0d4be33a2b565df34b9e7">learn more</a>
+        </slyd>
+
+      </slyd-group>
+
+      <slyd-group>
+
+        <slyd id="spec-drafts">
+          <h1 uppercase><b class="neon-blue">Rad</b> Drafts</h1>
+        </slyd>
+
+        <slyd id="spelling-and-grammar">
+          <h2><span spelling-error>Spleling</span> <span bold color="brand-3">&</span> Grammar</h2>
+          <pre class="language-css"><code>
+            ::spelling-error {
+              text-decoration: wavy var(--neon-red);
+            }
+
+            ::grammar-error {
+              text-decoration: wavy var(--neon-blue);
+            }
+          </code></pre>
+          <p>Will allow a <a class="neon-green" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::grammar-error">limited</a> set of allowable styles</p>
+        </slyd>
+
+        <slyd id="cue">
+          <h2><code>::cue()</code></h2>
+          <pre class="language-css"><code>
+            ::cue {
+              color: white;
+              background-color: hsl(0 0% 0% / 90%);
+            }
+          </code></pre>
+          <p>Will allow a <a class="neon-green" href="https://w3c.github.io/webvtt/#the-cue-pseudo-element">limited</a> set of allowable styles</p>
+        </slyd>
+
+        <slyd id="target-within">
+          <h2><code>:target-within</code></h2>
+          <pre class="language-css"><code>
+            article:target-within {
+              background-color: hsl(var(--surfaceHSL) / 10%);
+            }
+          </code></pre>
+          <a class="neon-green" href="https://www.w3.org/TR/selectors-4/#the-target-within-pseudo">learn more</a>
+        </slyd>
+
+        <slyd id="nesting">
+          <h2><code>& ></code> and <code>@nest</code></h2>
+          <pre class="language-css"><code>
+            article {
+              & > p { ... }
+              @nest section > & { ... }
+            }
+          </code></pre>
+          <a class="neon-pink" href="https://drafts.csswg.org/css-nesting-1/#nest-selector">learn more</a>
+        </slyd>
+
+        <slyd id="units">
+          <h2>🆕 Relative Units</h2>
+          <pre class="language-css"><code>
+            p {
+              margin: 1cap 1lh 1rlh;
+              padding: 1vi 1vb;
+            }
+          </code></pre>
+          <small>
+            <a class="neon-green" href="https://drafts.csswg.org/css-values-4/#relative-lengths">learn more</a> | <a href="https://codepen.io/argyleink/pen/OJNMywP">demo</a>
+          </small>
+        </slyd>
+
+        <slyd id="color-4">
+          <h2>Color <b>Level 4</b></h2>
+          <pre class="language-css"><code>
+            .colour {
+              --fn-notation: hsl(2rad 50% 50% / 80%);
+              --neon-pink: color(display-p3 1 0 1);
+              --gray: lch(50% 0 0);
+              --fallback: color(lab 25 25 25, display-p3 1 0 1, #ccc);
+            }
+          </code></pre>
+          <a class="neon-green" href="https://drafts.csswg.org/css-color/">learn more</a>
+        </slyd>
+
+        <slyd id="color-5">
+          <h2>Color <b>Level 5</b></h2>
+          <pre class="language-css"><code>
+            .colour {
+              --pink: color-mix(red, white);
+              --halfpink: color(var(--pink) / 50%);
+              --halfred: rgb(from #f00 / 50%);
+              --darkred: hsl(from red h s calc(l * .25));
+            }
+          </code></pre>
+          <a class="neon-green" href="https://drafts.csswg.org/css-color-5/">learn more</a>
         </slyd>
 
       </slyd-group>
@@ -131,206 +287,69 @@
 
       <slyd-group>
 
-        <slyd id="spec-drafts">
-          <h1 uppercase><b class="neon-blue">Rad</b> Drafts</h1>
-        </slyd>
-
-        <slyd id="spelling-and-grammar">
-          <h2>Spellin <span bold color="brand-3">&</span> Grammar</h2>
-          <pre class="language-css"><code>
-            ::spelling-error {
-              text-decoration: wavy var(--neon-red);
-            }
-
-            ::grammar-error {
-              text-decoration: wavy var(--neon-red);
-            }
-          </code></pre>
-          <p>Will allow a <a class="neon-green wavy" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::grammar-error">limited</a> set of allowable styles</p>
-        </slyd>
-
-        <slyd id="cue">
-          <h2><code>::cue()</code></h2>
-          <pre class="language-css"><code>
-            ::cue {
-              color: white;
-              background-color: hsl(0 0% 0% / 90%);
-            }
-          </code></pre>
-          <p>Will allow a <a class="neon-green wavy" href="https://w3c.github.io/webvtt/#the-cue-pseudo-element">limited</a> set of allowable styles</p>
-        </slyd>
-
-        <slyd id="target-within">
-          <h2><code>:target-within</code></h2>
-          <pre class="language-css"><code>
-            article:target-within {
-              background-color: hsl(var(--surfaceHSL) / 10%);
-            }
-          </code></pre>
-          <a class="neon-green" href="https://www.w3.org/TR/selectors-4/#the-target-within-pseudo">learn more</a>
-        </slyd>
-
-        <slyd id="nesting">
-          <h2><code>& ></code> and <code>@nest</code></h2>
-          <pre class="language-css"><code>
-            article {
-              & > p { ... }
-              @nest section > & { ... }
-            }
-          </code></pre>
-          <a class="neon-pink" href="https://drafts.csswg.org/css-nesting-1/#nest-selector">learn more</a>
-        </slyd>
-
-        <slyd id="units">
-          <h2>🆕 Relative Units</h2>
-          <pre class="language-css"><code>
-            p {
-              margin: 1cap 1lh 1rlh;
-              padding: 1vi 1vb;
-            }
-          </code></pre>
-          <small>
-            <a class="neon-green" href="https://drafts.csswg.org/css-values-4/#relative-lengths">learn more</a> | <a href="https://codepen.io/argyleink/pen/OJNMywP">demo</a>
-          </small>
-        </slyd>
-
-        <slyd id="color-4">
-          <h2>Color <b>Level 4</b></h2>
-          <pre class="language-css"><code>
-            .colour {
-              --fn-notation: hsl(2rad 50% 50% / 80%);
-              --neon-pink: color(display-p3 1 0 1);
-              --gray: lch(50% 0 0);
-              --fallback: color(lab 25 25 25, display-p3 1 0 1, #ccc);
-            }
-          </code></pre>
-          <a class="neon-green" href="https://drafts.csswg.org/css-color/">learn more</a>
-        </slyd>
-
-        <slyd id="color-5">
-          <h2>Color <b>Level 5</b></h2>
-          <pre class="language-css"><code>
-            .colour {
-              --pink: color-mix(red, white);
-              --halfpink: color(var(--pink) / 50%);
-              --halfred: rgb(from #f00 / 50%);
-              --darkred: hsl(from red h s calc(l * .25));
-            }
-          </code></pre>
-          <a class="neon-green" href="https://drafts.csswg.org/css-color-5/">learn more</a>
-        </slyd>
-
-      </slyd-group>
-
-      <slyd-group>
-
-        <slyd id="rad-proposals">
-          <h1 uppercase><b class="neon-pink">Rad</b> Proposals</h1>
-        </slyd>
-
-        <slyd id="motion-blur">
-          <h2>Motion Blur</h2>
-          <pre class="language-css"><code>
-            .animated {
-              motion-rendering: blur; 
-              motion-shutter-angle: 180deg;
-            }
-          </code></pre>
-          <a class="neon-green" href="https://github.com/w3c/csswg-drafts/issues/3837">learn more</a>
-        </slyd>
-
-        <slyd id="scroll-timeline">
-          <h2><code>@scroll-timeline</code></h2>
-          <pre class="language-css"><code>
-            @scroll-timeline feature-timeline {
-              source: selector(#feature-carousel);
-            }
-
-            #feature-scrollspy {
-              animation-timeline: feature-timeline;
-            }
-          </code></pre>
-          <small>
-            <a class="neon-green" href="https://drafts.csswg.org/scroll-animations-1/">learn more</a> | <a class="neon-pink" href="https://codepen.io/argyleink/pen/XWdNYaY">demo</a> | <a class="neon-blue" href="https://github.com/flackr/scroll-timeline">polyfill</a>
-          </small>
-        </slyd>
-
-        <slyd id="leading-trim">
-          <h2>Leading Trim</h2>
-          <pre class="language-css"><code>
-            p {
-              leading-trim: both;
-            }
-          </code></pre>
-          <small>
-            <a class="neon-green" href="https://medium.com/microsoft-design/leading-trim-the-future-of-digital-typesetting-d082d84b202">learn more</a> | <a class="neon-pink" href="https://drafts.csswg.org/css-inline-3/">draft</a>
-          </small>
-        </slyd>
-
-        <slyd id="layers">
-          <h2>Cascade Layers</h2>
-          <pre class="language-css"><code>
-            @layer reset {
-              * { box-sizing: border-box; }
-              body { margin: 0; }
-            }
-            ...
-            @layer reset { /* add more later */ }
-          </code></pre>
-          <a class="neon-green" href="">learn more</a>
-        </slyd>
-
-      </slyd-group>
-
-      <slyd-group>
-
         <slyd id="tools">
           <h1 uppercase><b class="neon-white">Rad</b> Tools</h1>
         </slyd>
 
+        <slyd id="wtf">
+          <h2 uppercase><b class="neon-yellow">WTF</b></h2>
+          <h3 color="brand-3">Web Template Framework</h3>
+          <a class="neon-green" href="https://chromium.googlesource.com/chromium/src.git/+/62.0.3178.1/third_party/WebKit/Source/platform/wtf/README.md">learn more</a>
+        </slyd>
+
         <slyd id="firefox-tools">
-          <h2>Firefox Devtools</h2>
+          <h2 style="display: flex; place-items: center; gap: .5ch;">
+            <img class="browser" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Firefox_logo%2C_2019.svg/200px-Firefox_logo%2C_2019.svg.png" alt="firefox logo">
+            Firefox Devtools
+          </h2>
           <ol>
             <li>Flexbox tools</li>
             <li>OG Grid tools</li>
+            <li>Font tools</li>
             <li>.. plenty more</li>
           </ol>
+          <a class="neon-green" href="https://intrinsic-css.netlify.app">sandbox</a>
         </slyd>
 
-        <slyd id="focus-tools">
-          <h2>Devtools :focus-visible</h2>
+        <slyd id="chromium-tools">
+          <h2 style="display: flex; place-items: center; gap: .5ch;">
+            <img class="browser" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Chromium_11_Logo.svg/256px-Chromium_11_Logo.svg.png" alt="chromium logo">
+            Chromium Devtools
+          </h2>
+          <ol>
+            <li>Grid tools</li>
+            <li>Emulation tools</li>
+            <li>Font tools</li>
+            <li>CSS Overview</li>
+            <li>CSS <code>&#60;type&#62;</code> Components</li>
+          </ol>
+          <a class="neon-green" href="https://intrinsic-css.netlify.app">sandbox</a>
         </slyd>
 
-        <slyd id="grid-tools">
-          <h2>Devtools For Grid</h2>
-        </slyd>
-
-        <slyd id="color-tools">
-          <h2>Safari color() picker</h2>
-        </slyd>
-
-        <slyd id="layer-tools">
-          <h2>Safari layers view</h2>
-        </slyd>
-
-        <slyd id="overview-tools">
-          <h2>CSS Overview</h2>
-        </slyd>
-
-        <slyd id="emulation-tools">
-          <h2>Emulating Preferences & Contexts</h2>
-        </slyd>
-
-        <slyd id="font-tools">
-          <h2>Font Editor</h2>
-        </slyd>
-
-        <slyd id="type-tools">
-          <h2>CSS &#60;type&#62; Components</h2>
+        <slyd id="safari-tools">
+          <h2 style="display: flex; place-items: center; gap: .5ch;">
+            <img class="browser" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/234px-Safari_browser_logo.svg.png" alt="safari logo">
+            Safari Devtools
+          </h2>
+          <ol>
+            <li>Safari <code>color()</code> picker</li>
+            <li>Layers view</li>
+          </ol>
+          <a class="neon-green" href="https://cdpn.io/argyleink/debug/oNxeWbz">sandbox</a>
         </slyd>
 
         <slyd id="designer-tools">
-          <h2>VisBug Artboard</h2>
+          <h2 style="display: flex; place-items: center; gap: .5ch;">
+            <div class="visbug">
+              <img class="browser" src="https://visbug.web.app/assets/visbug.png" alt="visbug logo">
+            </div>
+            VisBug
+          </h2>
+          <ol>
+            <li>Artboard illusion</li>
+            <li>Flexbox tools</li>
+            <li>Cross Browser Support</li>
+          </ol>
         </slyd>
         
       </slyd-group>
@@ -342,10 +361,15 @@
           <h1><b class="neon-purple">CRUISIN</b></h1>
         </slyd>
 
+        <slyd>
+          <h2><b class="neon-pink">Thank You</b></h2>
+          <h1 uppercase>London <b class="neon-purple">CSS</b></h1>
+        </slyd>
+
         <slyd id="follow-for-more">
           <h1><span flipped>🎉</span> <b>CSS</b> 🎉</h1>
           <p lead>
-            Hear this hot 👉 <a class="neon-green" href="https://twitter.com/argyleink">@argyleink</a>
+            Hear it hot 👉 <a class="neon-green" href="https://twitter.com/argyleink">@argyleink</a>
           </p>
         </slyd>
 

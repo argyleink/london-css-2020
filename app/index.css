@@ -38,3 +38,27 @@ code[class*="language-"], pre[class*="language-"] {
 .wavy {
   text-decoration-style: wavy;
 }
+
+.browser {
+  max-block-size: 1em;
+}
+
+.visbug {
+  display: inline-flex;
+  background: white;
+  border-radius: 999px;
+  padding: 10px;
+  box-sizing: content-box;
+
+  & > img {
+    max-block-size: .75em;
+  }
+}
+
+li {
+  gap: .5ch;
+}
+
+[spelling-error] {
+  text-decoration: wavy underline var(--neon-red);
+}
