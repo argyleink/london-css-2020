@@ -1,8 +1,8 @@
 @import 'slyd';
 @import 'colors.css';
 
-h2 {
-  transform: translateZ(6px) translateY(4vmin);
+h2.lg-codeblock-adjust {
+  transform: translateZ(6px) translateY(6vmin);
 }
 
 p > a {
