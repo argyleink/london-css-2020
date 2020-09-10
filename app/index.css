@@ -71,6 +71,10 @@ li {
   margin: 0;
 }
 
+slyds > slyd:after, slyds > slyd-group:not(:last-child) > slyd:last-child:after {
+  font-size: max(2vmax, 32px);
+}
+
 @media (orientation: portrait) {
   code[class*="language-"], 
   pre[class*="language-"] {
@@ -79,7 +83,7 @@ li {
 }
 
 @media (orientation: portrait) and (max-width: 720px) {
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, p {
     margin: 0 2vmax;
   }
 }
