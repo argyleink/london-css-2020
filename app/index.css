@@ -1,10 +1,6 @@
 @import 'slyd';
 @import 'colors.css';
 
-h2.lg-codeblock-adjust {
-  transform: translateZ(6px) translateY(6vmin);
-}
-
 p > a {
   display: inline;
 }
@@ -73,4 +69,31 @@ li {
   border-radius: 5vmin;
   display: inline-flex;
   margin: 0;
+}
+
+@media (orientation: portrait) {
+  code[class*="language-"], 
+  pre[class*="language-"] {
+    font-size: 2.5vmin;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 720px) {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0 2vmax;
+  }
+}
+
+@media (max-width: 640px) {
+  code[class*="language-"], 
+  pre[class*="language-"] {
+    font-size: 16px;
+    transform: translateZ(-15px);
+  }
+}
+
+@media (min-width: 1024px) {
+  h2.lg-codeblock-adjust {
+    transform: translateZ(6px) translateY(50px);
+  }
 }
